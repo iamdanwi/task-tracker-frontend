@@ -1,0 +1,20 @@
+# Ignore build output
+.next
+out
+dist
+build
+
+# Ignore dependency directories
+node_modules
+
+# Ignore coverage reports
+coverage
+
+# Ignore misc files
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Ignore TypeScript declaration files
+*.d.ts
