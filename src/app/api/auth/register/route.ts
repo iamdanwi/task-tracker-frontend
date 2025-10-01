@@ -1,14 +1,16 @@
 import { NextResponse } from "next/server";
 import api from "@/lib/axios";
+import { cookies } from "next/headers";
 
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { data, status } = await api.post("/api/auth/register", body, {
-            withCredentials: true, // allow cookie to pass
-        });
+        const { data, status } = await api.post("/api/auth/register", body);
 
-        // Forward the full response from backend (message, token, user)
+
+        const cookieStore = await cookies();
+        cookieStore.set("token", data.token);
+
         return NextResponse.json(data, { status });
     } catch (error: unknown) {
         const err = error as { response?: { data?: { message?: string }, status?: number } };

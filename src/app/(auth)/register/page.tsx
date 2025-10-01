@@ -35,11 +35,23 @@ export default function RegisterPage() {
       const res = await axios.post("/api/auth/register", form);
 
       if (res.status === 201) {
-        toast.success("Account created 🎉 Redirecting...");
-        router.push("/login");
+        toast.success("Account created 🎉 Redirecting...", {
+          position: "top-right",
+          style: {
+            backgroundColor: "green",
+            color: "white",
+          },
+        });
+        router.push("/user/dashboard");
       }
     } catch (err: any) {
-      toast.error(err.response?.data?.message || "Registration failed");
+      toast.error(err.response?.data?.message || "Registration failed", {
+        position: "top-right",
+        style: {
+          backgroundColor: "red",
+          color: "white",
+        },
+      });
     } finally {
       setLoading(false);
     }
