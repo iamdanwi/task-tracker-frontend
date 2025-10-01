@@ -10,7 +10,7 @@
     "format:fix": "prettier --write .",
     "lint": "eslint",
     "lint:fix": "next lint --fix",
-    "prepare": "husky install"
+    "prepare": "husky install || echo 'Skip husky on CI'"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
