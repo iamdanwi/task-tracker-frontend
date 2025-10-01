@@ -1,0 +1,21 @@
+# Node modules and build artifacts
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-lock.yaml
+
+# Husky (git hooks, not needed in production)
+.husky
+
+# Local dev / config files
+*.env.local
+*.env.development
+.vscode
+.idea
+
+# Test files
+__tests__/
+coverage/
+
+# Mac / OS files
+.DS_Store
