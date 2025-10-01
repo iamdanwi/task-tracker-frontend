@@ -1,8 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Tracker - Frontend
+
+A modern task management application built with Next.js 14, featuring a clean UI and robust functionality.
+
+## Features
+
+- 🔐 User Authentication (Login/Register)
+- 📝 Task Management (Create, Read, Update, Delete)
+- 🌓 Dark/Light Theme
+- 🎯 Task Status Tracking
+- 📅 Due Date Management
+- 🔄 Real-time Updates
+- 📱 Responsive Design
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **State Management:** React Hooks
+- **HTTP Client:** Axios
+- **Form Handling:** Native Forms
+- **Authentication:** JWT
+- **Toast Notifications:** Sonner
+- **Icons:** Lucide Icons
+- **Date Handling:** date-fns
+- **Theme:** next-themes
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm/yarn/pnpm
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd task-tracker/frontend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Set up environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+4. Start the development server:
 
 ```bash
 npm run dev
@@ -10,27 +66,60 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file with the following variables:
 
-## Learn More
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:5000 # Your backend API URL
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/                  # App router pages
+│   ├── (auth)/          # Authentication routes
+│   ├── (user)/          # Protected user routes
+│   └── api/             # API routes
+├── components/          # Reusable components
+│   ├── ui/             # UI components
+│   └── ...             # Feature components
+├── lib/                # Utility functions
+└── hooks/              # Custom React hooks
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## API Routes
 
-## Deploy on Vercel
+- `POST /api/auth/login` - User login
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/logout` - User logout
+- `GET /api/task/get` - Get all tasks
+- `POST /api/task/create` - Create new task
+- `PUT /api/task/update` - Update task
+- `DELETE /api/task/delete` - Delete task
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run format` - Run Prettier check
+- `npm run format:fix` - Fix Prettier issues
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
