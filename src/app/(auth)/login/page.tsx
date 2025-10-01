@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
@@ -60,7 +61,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-gray-50 to-gray-200 p-4">
-      <Card className="w-full max-w-md shadow-xl border border-gray-200 rounded-2xl">
+      <Card className="w-full max-w-md rounded-2xl border border-gray-200 shadow-xl">
         <CardHeader>
           <CardTitle className="text-center text-2xl font-bold">
             Login to Task Tracker
@@ -75,7 +76,7 @@ export default function LoginPage() {
               <Label htmlFor="email">Email</Label>
               <div className="relative">
                 <Mail
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400"
                   size={18}
                 />
                 <Input
@@ -95,7 +96,7 @@ export default function LoginPage() {
               <Label htmlFor="password">Password</Label>
               <div className="relative">
                 <Lock
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-400"
                   size={18}
                 />
                 <Input
